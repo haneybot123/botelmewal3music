@@ -6,7 +6,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 
 
-bot=commands.Bot(command_prefix='e')
+bot=commands.Bot(command_prefix='!!!')
 
 from discord import opus
 OPUS_LIBS = ['libopus-0.x86.dll', 'libopus-0.x64.dll',
@@ -39,7 +39,7 @@ opts = {
         }    
     
 @bot.command(pass_context=True)
-async def play(ctx):
+async def join(ctx):
     channel = ctx.message.author.voice.voice_channel
     await bot.join_voice_channel(channel)
 
@@ -68,7 +68,7 @@ async def resume(ctx):
     player.resume()
           
 @bot.command(pass_context=True)
-async def vol(ctx, vol):
+async def volume(ctx, vol):
     vol = float(vol)
     vol = player.volume = vol
 
