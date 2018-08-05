@@ -39,7 +39,7 @@ opts = {
         }    
     
 @bot.command(pass_context=True)
-async def join(ctx):
+async def play(ctx):
     channel = ctx.message.author.voice.voice_channel
     await bot.join_voice_channel(channel)
 
@@ -68,7 +68,7 @@ async def resume(ctx):
     player.resume()
           
 @bot.command(pass_context=True)
-async def volume(ctx, vol):
+async def vol(ctx, vol):
     vol = float(vol)
     vol = player.volume = vol
 
